@@ -14,6 +14,6 @@ default values.
 | VAULT_API_URL                         | [Vault instance API CRL read endpoint](https://www.vaultproject.io/api/secret/pki/index.html#read-crl)                                           | "http://locahost/v1/pki/crl/pem" 
 | VAULT_API_TOKEN                       | Vault instance access token  | "123"                 |
 | CRL_FILE_PATH                         | Path to CRL pem file                                          | "crl.pem"                  |
-| CMD_TO_EXEC                           | Command which will be executed to send signal and reload nginx                | "kill -HUP nginx"             |
+| CMD_TO_EXEC                           | Its a regex which looks for PID's looping over all running processes and finds the ones which cmdline matches the regex provided.              | ".*nginx.*"             |
 | API_PORT                              |   API listening port                                  | "8000"              |
 | API_ENDPOINT                       | API Endpoint                                        |    "/reload"                   |
