@@ -1,7 +1,7 @@
 ****docker-nginx-reload****
 
 Sidecar container for K8s nginx CRL reload.
-It exposes HTTP API endpoint which triggers CRL fetching from Vault and updating CRL file, then sending reload signal to nginx in order to re-load CRL file.
+It exposes HTTP API endpoint which triggers CRL fetching from Vault and updating CRL file. Then thanks to K8s [Shated process namespaces  between Containers in a Pod](https://kubernetes.io/docs/tasks/configure-pod-container/share-process-namespace/) sents reload signal to nginx in order to re-load CRL file.
 
 ## Configuration
 
