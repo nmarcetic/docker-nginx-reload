@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  docker-nginx-reload:
+    image: docker-nginx-reload
+    build: .
+    ports:
+      - "8000:8000"
+    restart: on-failure
+    environment:
+      VAULT_API_URL: "http://localhost/v1/pki/crl/pem"
+      VAULT_API_TOKEN: "123"
+      CRL_FILE_PATH: "crl.pem"
+      CMD_TO_EXEC: ".*nginx.*"
+      API_PORT: "8000"
+      API_ENDPOINT: "/reload"
+    volumes:
+      - ./crl.pem:/crl.pem
