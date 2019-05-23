@@ -9,7 +9,7 @@ services:
     restart: on-failure
     environment:
       VAULT_API_URL: "http://localhost/v1/pki/crl/pem"
-      VAULT_API_TOKEN: "123"
+      VAULT_API_TOKEN: ""
       CRL_FILE_PATH: "crl.pem"
       CMD_TO_EXEC: ".*nginx.*"
       API_PORT: "8000"

@@ -10,7 +10,7 @@ RUN upx -v --ultra-brute /go/bin/docker-nginx-reload
 
 ############################
 
-FROM  golang:alpine
+FROM  scratch
 COPY --from=builder /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
 COPY --from=builder /go/bin/docker-nginx-reload /docker-nginx-reload
 ENTRYPOINT ["/docker-nginx-reload"]
