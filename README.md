@@ -11,9 +11,11 @@ default values.
 
 | Variable                            | Description                                                | Default               |
 |-------------------------------------|------------------------------------------------------------|-----------------------|
-| VAULT_API_URL                         | [Vault instance API CRL read endpoint](https://www.vaultproject.io/api/secret/pki/index.html#read-crl)                                           | "http://locahost/v1/pki/crl/pem" 
-| VAULT_API_TOKEN                       | Vault instance access token  | "123"                 |
+| VAULT_API_URL                         | [Vault instance API CRL read endpoint](https://www.vaultproject.io/api/secret/pki/index.html#read-crl)                                           | "http://locahost" 
+| VAULT_CA_INTERMEDIATE                       | Is CA is intermediate and should we fetch its own CRL   | "false"
+| VAULT_SECRET_ROOT                       | PKI secret Root name   | "pki"                 |
+| VAULT_SECRET_INTERMEDIATE                       | If VAULT_CA_INTERMEDIATE is true, we must set Intermediate secret name   | "pki_int"                 |
 | CRL_FILE_PATH                         | Path to CRL pem file                                          | "crl.pem"                  |
-| CMD_TO_EXEC                           | Its a regex which looks for PID's looping over all running processes and finds the ones which cmdline matches the regex provided.              | ".*nginx.*"             |
+| CMD_TO_EXEC                           | Its a regex which looks for PID's looping over all running processes and finds the ones which cmdline matches the regex provided.              | ".*nginx: master.*"             |
 | API_PORT                              |   API listening port                                  | "8000"              |
 | API_ENDPOINT                       | API Endpoint                                        |    "/reload"                   |
